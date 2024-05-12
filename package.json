@@ -46,14 +46,84 @@
       "types": "./dist/utils/typescript.utils.d.ts"
     },
     "./api": {
-      "require": "./dist/api/tmdb-api.endpoints.cjs",
-      "import": "./dist/api/tmdb-api.endpoints.js",
-      "types": "./dist/api/tmdb-api.endpoints.d.ts"
+      "require": "./dist/api/tvdb-api.endpoints.cjs",
+      "import": "./dist/api/tvdb-api.endpoints.js",
+      "types": "./dist/api/tvdb-api.endpoints.d.ts"
     },
     "./api/minimal": {
-      "require": "./dist/api/tmdb-api-minimal.endpoints.cjs",
-      "import": "./dist/api/tmdb-api-minimal.endpoints.js",
-      "types": "./dist/api/tmdb-api-minimal.endpoints.d.ts"
+      "require": "./dist/api/tvdb-api-minimal.endpoints.cjs",
+      "import": "./dist/api/tvdb-api-minimal.endpoints.js",
+      "types": "./dist/api/tvdb-api-minimal.endpoints.d.ts"
+    },
+    "./api/artwork": {
+      "require": "./dist/api/endpoints/artwork.endpoint.cjs",
+      "import": "./dist/api/endpoints/artwork.endpoint.js",
+      "types": "./dist/api/endpoints/artwork.endpoint.d.ts"
+    },
+    "./api/awards": {
+      "require": "./dist/api/endpoints/awards.endpoint.cjs",
+      "import": "./dist/api/endpoints/awards.endpoint.js",
+      "types": "./dist/api/endpoints/awards.endpoint.d.ts"
+    },
+    "./api/companies": {
+      "require": "./dist/api/endpoints/companies.endpoint.cjs",
+      "import": "./dist/api/endpoints/companies.endpoint.js",
+      "types": "./dist/api/endpoints/companies.endpoint.d.ts"
+    },
+    "./api/episodes": {
+      "require": "./dist/api/endpoints/episodes.endpoint.cjs",
+      "import": "./dist/api/endpoints/episodes.endpoint.js",
+      "types": "./dist/api/endpoints/episodes.endpoint.d.ts"
+    },
+    "./api/favorites": {
+      "require": "./dist/api/endpoints/favorites.endpoint.cjs",
+      "import": "./dist/api/endpoints/favorites.endpoint.js",
+      "types": "./dist/api/endpoints/favorites.endpoint.d.ts"
+    },
+    "./api/genres": {
+      "require": "./dist/api/endpoints/genres.endpoint.cjs",
+      "import": "./dist/api/endpoints/genres.endpoint.js",
+      "types": "./dist/api/endpoints/genres.endpoint.d.ts"
+    },
+    "./api/lists": {
+      "require": "./dist/api/endpoints/lists.endpoint.cjs",
+      "import": "./dist/api/endpoints/lists.endpoint.js",
+      "types": "./dist/api/endpoints/lists.endpoint.d.ts"
+    },
+    "./api/login": {
+      "require": "./dist/api/endpoints/login.endpoint.cjs",
+      "import": "./dist/api/endpoints/login.endpoint.js",
+      "types": "./dist/api/endpoints/login.endpoint.d.ts"
+    },
+    "./api/movies": {
+      "require": "./dist/api/endpoints/movies.endpoint.cjs",
+      "import": "./dist/api/endpoints/movies.endpoint.js",
+      "types": "./dist/api/endpoints/movies.endpoint.d.ts"
+    },
+    "./api/people": {
+      "require": "./dist/api/endpoints/people.endpoints.cjs",
+      "import": "./dist/api/endpoints/people.endpoints.js",
+      "types": "./dist/api/endpoints/people.endpoints.d.ts"
+    },
+    "./api/search": {
+      "require": "./dist/api/endpoints/search.endpoint.cjs",
+      "import": "./dist/api/endpoints/search.endpoint.js",
+      "types": "./dist/api/endpoints/search.endpoint.d.ts"
+    },
+    "./api/seasons": {
+      "require": "./dist/api/endpoints/seasons.endpoint.cjs",
+      "import": "./dist/api/endpoints/seasons.endpoint.js",
+      "types": "./dist/api/endpoints/seasons.endpoint.d.ts"
+    },
+    "./api/series": {
+      "require": "./dist/api/endpoints/series.endpoint.cjs",
+      "import": "./dist/api/endpoints/series.endpoint.js",
+      "types": "./dist/api/endpoints/series.endpoint.d.ts"
+    },
+    "./api/user": {
+      "require": "./dist/api/endpoints/user.endpoint.cjs",
+      "import": "./dist/api/endpoints/user.endpoint.js",
+      "types": "./dist/api/endpoints/user.endpoint.d.ts"
     }
   },
   "files": [
