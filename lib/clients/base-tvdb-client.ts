@@ -64,6 +64,7 @@ export class BaseTvdbClient extends BaseClient<TvdbApiQuery, TvdbApiResponse, Tv
     if (!template.opts?.auth) return headers;
 
     if (!this.auth.accessToken) throw Error('OAuth required: access_token is missing');
+    if (this.auth.expires && this.auth.expires < Date.now()) throw Error('OAuth required: access_token has expired');
 
     headers[BaseApiHeaders.Authorization] = `Bearer ${this.auth.accessToken}`;
 
@@ -86,8 +87,8 @@ export class BaseTvdbClient extends BaseClient<TvdbApiQuery, TvdbApiResponse, Tv
    */
   protected _parseUrl<T extends TvdbApiParam = TvdbApiParam>(template: TvdbApiTemplate<T>, params: T): URL {
     if (this.settings.version && !template.url.startsWith(`/${this.settings.version}`)) template.url = `/${this.settings.version}${template.url}`;
-    injectCorsProxyPrefix(template, this.settings);
-    return parseUrl<T>(template, params, this.settings.endpoint);
+    const _template = injectCorsProxyPrefix(template, this.settings);
+    return parseUrl<T>(_template, params, this.settings.endpoint);
   }
 
   /**
@@ -125,6 +126,6 @@ export class BaseTvdbClient extends BaseClient<TvdbApiQuery, TvdbApiResponse, Tv
       if (result.status !== 'success') throw result;
       return result.links ? { data: result.data, pagination: result.links } : result.data;
     };
-    return response;
+    return parsed;
   }
 }
