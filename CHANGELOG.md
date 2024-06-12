@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/dvcol/tvdb-http-client/compare/v1.1.1...v1.1.2) (2024-06-12)
+
+
+### Bug Fixes
+
+* **auth:** adds expiration check and fix parsed response ([5b3b4ab](https://github.com/dvcol/tvdb-http-client/commit/5b3b4ab04aeef48546828423db0d4cc912c10da8))
+* **client:** supports cancellable promises in calls ([48311d0](https://github.com/dvcol/tvdb-http-client/commit/48311d0a92c9228e1d7d62307aecfab2f5cddf80))
+
 ### [1.1.1](https://github.com/dvcol/tvdb-http-client/compare/v1.1.0...v1.1.1) (2024-05-12)
 
 
