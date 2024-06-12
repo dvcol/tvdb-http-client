@@ -9,6 +9,8 @@ import {
   type ResponseOrTypedResponse,
 } from '@dvcol/base-http-client';
 
+import type { CancellablePromise } from '@dvcol/base-http-client/utils/fetch';
+
 import type { RecursiveRecord } from '~/utils/typescript.utils';
 
 /**
@@ -73,7 +75,7 @@ export type TvdbApiTemplateOptions<T extends string | number | symbol = string> 
 export type TvdbApiTemplate<Parameter extends TvdbApiParam = TvdbApiParam> = BaseTemplate<Parameter, TvdbApiTemplateOptions<keyof Parameter>>;
 
 export interface TvdbClientEndpoint<Parameter extends TvdbApiParam = Record<string, never>, Response = unknown> {
-  (param?: Parameter, init?: BodyInit): Promise<TvdbApiResponse<Response>>;
+  (param?: Parameter, init?: BodyInit): CancellablePromise<TvdbApiResponse<Response>>;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging

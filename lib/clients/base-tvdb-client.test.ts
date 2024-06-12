@@ -39,7 +39,7 @@ describe('base-tvdb-client.ts', () => {
 
   const mockAuth: TvdbClientAuthentication = {
     accessToken: 'access_token',
-    expires: 1000,
+    expires: new Date().getTime() + 1000 * 60 * 60 * 24 * 28,
     userPin: 'user_pin',
   };
 
@@ -238,10 +238,10 @@ describe('base-tvdb-client.ts', () => {
     expect(result).toBe(response);
   });
 
-  it('should throw an error if auth is missing', async () => {
+  it('should throw an error if auth is missing', () => {
     expect.assertions(1);
 
     const testFunction = () => client.publicCall({ ...mockTemplate, opts: { ...mockTemplate.opts, auth: true } }, mockParams);
-    await expect(testFunction).rejects.toThrow('OAuth required: access_token is missing');
+    expect(testFunction).toThrow('OAuth required: access_token is missing');
   });
 });
