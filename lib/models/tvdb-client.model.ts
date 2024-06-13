@@ -9,7 +9,7 @@ import {
   type ResponseOrTypedResponse,
 } from '@dvcol/base-http-client';
 
-import type { CancellablePromise } from '@dvcol/base-http-client/utils/fetch';
+import type { CancellablePromise } from '@dvcol/common-utils/http/fetch';
 
 import type { RecursiveRecord } from '~/utils/typescript.utils';
 

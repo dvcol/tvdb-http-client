@@ -1,4 +1,4 @@
-import { HttpMethod } from '@dvcol/base-http-client/utils/http';
+import { HttpMethod } from '@dvcol/common-utils/http';
 
 import type { Entity } from '~/models/tvdb-entity.model';
 import type { TvdbPersonExtended, TvdbPersonShort } from '~/models/tvdb-person.model';

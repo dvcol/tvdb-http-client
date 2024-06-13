@@ -1,4 +1,4 @@
-import { HttpMethod } from '@dvcol/base-http-client/utils/http';
+import { HttpMethod } from '@dvcol/common-utils/http';
 
 import type { TvdbAward, TvdbAwardCategoryExtended, TvdbAwardCategoryShort } from '~/models/tvdb-award.model';
 import type { Entity } from '~/models/tvdb-entity.model';

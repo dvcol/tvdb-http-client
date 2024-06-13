@@ -1,6 +1,6 @@
 import { BaseApiHeaders, BaseHeaderContentType } from '@dvcol/base-http-client';
-import { CancellableFetch } from '@dvcol/base-http-client/utils/fetch';
-import { HttpMethod } from '@dvcol/base-http-client/utils/http';
+import { HttpMethod } from '@dvcol/common-utils/http';
+import { CancellableFetch } from '@dvcol/common-utils/http/fetch';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { BaseTvdbClient } from './base-tvdb-client';
