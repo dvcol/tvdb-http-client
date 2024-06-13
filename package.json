@@ -1,7 +1,7 @@
 {
   "name": "@dvcol/tvdb-http-client",
   "type": "module",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "packageManager": "pnpm@9.1.0",
   "description": "Simple fetch based http client for TVDB API",
   "homepage": "https://github.com/dvcol/tvdb-http-client",

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/dvcol/tvdb-http-client/compare/v1.1.2...v1.1.3) (2024-06-13)
+
+
+### Bug Fixes
+
+* **deps:** moves to common-utils ([49a431b](https://github.com/dvcol/tvdb-http-client/commit/49a431bf8a4ca8f028fa3f19f6b9863f4c5ade9d))
+
 ### [1.1.2](https://github.com/dvcol/tvdb-http-client/compare/v1.1.1...v1.1.2) (2024-06-12)
 
 
