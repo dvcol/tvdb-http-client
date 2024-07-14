@@ -25,6 +25,18 @@ import type {
 // eslint-disable-next-line @typescript-eslint/no-unsafe-declaration-merging  -- To allow type extension
 export interface BaseTvdbClient extends TvdbApi {}
 
+const parseResponse = (result: TvdbApiResponseData) => {
+  if (result.status !== 'success') throw result;
+  return result.links ? { data: result.data, pagination: result.links } : result.data;
+};
+
+const patchResponse = <T extends Response>(response: T): T => {
+  const parsed: T = response;
+  const _json = parsed.json as T['json'];
+  parsed.json = async () => _json.bind(parsed)().then(parseResponse);
+  return parsed;
+};
+
 /**
  * Represents a Tvdb API client with common functionality.
  *
@@ -119,13 +131,9 @@ export class BaseTvdbClient extends BaseClient<TvdbApiQuery, TvdbApiResponse, Tv
   protected _parseResponse(response: TvdbApiResponse<TvdbApiResponseData>): TvdbApiResponse {
     if (!response.ok || response.status >= 400) throw response;
 
-    const parsed: TvdbApiResponse = response;
-    const _json = parsed.json as TvdbApiResponse<TvdbApiResponseData>['json'];
-    parsed.json = async () => {
-      const result = await _json.bind(parsed)();
-      if (result.status !== 'success') throw result;
-      return result.links ? { data: result.data, pagination: result.links } : result.data;
-    };
+    const parsed: TvdbApiResponse = patchResponse(response);
+    const _clone = parsed.clone;
+    parsed.clone = () => patchResponse(_clone.bind(parsed)());
     return parsed;
   }
 }
