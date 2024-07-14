@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/dvcol/tvdb-http-client/compare/v1.1.3...v1.1.4) (2024-07-14)
+
+
+### Bug Fixes
+
+* **parse:** parse cloned responses too to fix caching ([33ae155](https://github.com/dvcol/tvdb-http-client/commit/33ae15503f731432f5953d7655ebf1817bb10d03))
+
 ### [1.1.3](https://github.com/dvcol/tvdb-http-client/compare/v1.1.2...v1.1.3) (2024-06-13)
 
 
