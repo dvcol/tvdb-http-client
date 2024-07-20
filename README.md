@@ -58,6 +58,8 @@ export const settings: TvdbClientSettings = {
   version: 'v4',
 
   useragent: '<Your user Agent>',
+  corsProxy: '<Optional cors Proxy>',
+  corsPrefix: '<Optional cors Proxy prefix>'
 };
 
 const authenticaiton = {}
