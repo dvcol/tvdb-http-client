@@ -6,6 +6,7 @@ import {
   injectCorsProxyPrefix,
   parseBody,
   parseUrl,
+  patchResponse,
 } from '@dvcol/base-http-client';
 
 import type { TvdbApi } from '~/api/tvdb-api.endpoints';
@@ -30,12 +31,7 @@ const parseResponse = (result: TvdbApiResponseData) => {
   return result.links ? { data: result.data, pagination: result.links } : result.data;
 };
 
-const patchResponse = <T extends Response>(response: T): T => {
-  const parsed: T = response;
-  const _json = parsed.json as T['json'];
-  parsed.json = async () => _json.bind(parsed)().then(parseResponse);
-  return parsed;
-};
+const patchTvdbResponse = <T extends Response>(response: T): T => patchResponse(response, parseResponse);
 
 /**
  * Represents a Tvdb API client with common functionality.
@@ -131,9 +127,9 @@ export class BaseTvdbClient extends BaseClient<TvdbApiQuery, TvdbApiResponse, Tv
   protected _parseResponse(response: TvdbApiResponse<TvdbApiResponseData>): TvdbApiResponse {
     if (!response.ok || response.status >= 400) throw response;
 
-    const parsed: TvdbApiResponse = patchResponse(response);
+    const parsed: TvdbApiResponse = patchTvdbResponse(response);
     const _clone = parsed.clone;
-    parsed.clone = () => patchResponse(_clone.bind(parsed)());
+    parsed.clone = () => patchTvdbResponse(_clone.bind(parsed)());
     return parsed;
   }
 }

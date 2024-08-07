@@ -7,7 +7,7 @@ import { BaseTvdbClient } from './base-tvdb-client';
 
 import type { BaseInit } from '@dvcol/base-http-client';
 
-import type { Updater } from '@dvcol/base-http-client/utils/observable';
+import type { Updater } from '@dvcol/common-utils/common/observable';
 import type { TvdbApiParam, TvdbApiResponse, TvdbApiResponseData, TvdbApiTemplate, TvdbClientAuthentication } from '~/models/tvdb-client.model';
 
 import { tvdbClientSettings } from '~/mocks/tvdb-settings.mock';
