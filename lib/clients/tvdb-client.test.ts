@@ -1,5 +1,5 @@
 import { BaseApiHeaders, BaseHeaderContentType } from '@dvcol/base-http-client';
-import { hasOwnProperty } from '@dvcol/base-http-client/utils';
+import { hasOwnProperty } from '@dvcol/base-http-client/utils/test';
 import { HttpMethod } from '@dvcol/common-utils/http';
 import { CancellableFetch } from '@dvcol/common-utils/http/fetch';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';

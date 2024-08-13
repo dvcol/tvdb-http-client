@@ -1,13 +1,7 @@
-import {
-  BaseApiHeaders,
-  type BaseBody,
-  BaseClient,
-  BaseHeaderContentType,
-  injectCorsProxyPrefix,
-  parseBody,
-  parseUrl,
-  patchResponse,
-} from '@dvcol/base-http-client';
+import { type BaseBody, BaseClient } from '@dvcol/base-http-client';
+
+import { injectCorsProxyPrefix, parseBody, parseUrl, patchResponse, injectUrlPrefix } from '@dvcol/base-http-client/utils/client';
+import { BaseApiHeaders, BaseHeaderContentType } from '@dvcol/base-http-client/utils/http';
 
 import type { TvdbApi } from '~/api/tvdb-api.endpoints';
 import type {
@@ -94,8 +88,8 @@ export class BaseTvdbClient extends BaseClient<TvdbApiQuery, TvdbApiResponse, Tv
    * @throws {Error} Throws an error if mandatory parameters are missing or if a filter is not supported.
    */
   protected _parseUrl<T extends TvdbApiParam = TvdbApiParam>(template: TvdbApiTemplate<T>, params: T): URL {
-    if (this.settings.version && !template.url.startsWith(`/${this.settings.version}`)) template.url = `/${this.settings.version}${template.url}`;
-    const _template = injectCorsProxyPrefix(template, this.settings);
+    const versionedTemplate = injectUrlPrefix(`/${this.settings.version}`, template);
+    const _template = injectCorsProxyPrefix(versionedTemplate, this.settings);
     return parseUrl<T>(_template, params, this.settings.endpoint);
   }
 
