@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://github.com/dvcol/tvdb-http-client/compare/v1.1.5...v1.1.6) (2024-08-13)
+
+
+### Bug Fixes
+
+* **proxy:** prevent mutation of template when proxy is applied ([e524cb9](https://github.com/dvcol/tvdb-http-client/commit/e524cb9361f4dd52fc9022f3be2e70effd7afd21))
+
 ### [1.1.5](https://github.com/dvcol/tvdb-http-client/compare/v1.1.4...v1.1.5) (2024-07-20)
 
 ### [1.1.4](https://github.com/dvcol/tvdb-http-client/compare/v1.1.3...v1.1.4) (2024-07-14)
